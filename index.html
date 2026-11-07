@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cartographie de l’intelligence artificielle</title>
+<meta name="description" content="Comprendre les grandes familles de l’IA : symbolique, apprentissage, générative et agentique.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+document.documentElement.className="js";
+try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}
+</script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#haut"><span class="dot" aria-hidden="true"></span>Cartographie IA</a>
+    <nav aria-label="Sections"><ul>
+      <li><a href="#explorer">Trouver ma famille</a></li>
+      <li><a href="#symbolique">Symbolique</a></li>
+      <li><a href="#apprentissage">Apprentissage</a></li>
+      <li><a href="#generative">Générative</a></li>
+      <li><a href="#agentique">Agentique</a></li>
+    </ul></nav>
+    <button class="toggle" id="theme" type="button" aria-label="Changer de thème"><span class="ico" aria-hidden="true"></span><span id="theme-label">Thème</span></button>
+  </div>
+</header>
+
+<main id="haut">
+  <div class="wrap hero">
+    <h1>Deux façons de rendre une machine intelligente</h1>
+    <p class="lead">Une IA peut suivre des règles écrites à l’avance, ou apprendre par elle‑même. Cette page vous aide à comprendre chaque famille, à quoi elle sert, et laquelle choisir selon votre besoin.</p>
+
+    <svg class="tree" viewBox="0 0 800 300" role="img" aria-label="L’intelligence artificielle se divise en IA symbolique, fondée sur des règles explicites, et IA par apprentissage, fondée sur les données, l’expérience ou la physique.">
+      <path id="l1" class="link draw" d="M400 90 C400 150 190 130 190 205"/>
+      <path id="l2" class="link draw" d="M400 90 C400 150 610 130 610 205"/>
+      <circle class="halo" cx="400" cy="52" r="42"/>
+      <circle class="core" cx="400" cy="52" r="42"/>
+      <text class="t2 w" x="400" y="48" style="font-weight:700;font-size:14px">Intelligence</text>
+      <text class="t2 w" x="400" y="66" style="font-weight:700;font-size:14px">Artificielle</text>
+      <rect class="box" x="40" y="205" width="300" height="80" rx="18"/>
+      <text class="t1" x="190" y="238">IA symbolique</text>
+      <text class="t2" x="190" y="262">Raisonne à partir de règles explicites</text>
+      <rect class="box red" x="460" y="205" width="300" height="80" rx="18"/>
+      <text class="t1" x="610" y="238">IA prédictif & décisionnel</text>
+      <text class="t2 w" x="610" y="262">Apprend des Données/Expériences/Physique</text>
+    </svg>
+  </div>
+
+  <section id="explorer">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>Quelle IA pour quel besoin ?</h2>
+        <p>Choisissez la situation qui ressemble à la vôtre. La carte de droite indique la famille adaptée.</p>
+      </div>
+      <div class="explorer rv">
+        <div class="needs" id="needs"></div>
+        <div class="answer" id="answer" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="symbolique" class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>IA symbolique</h2>
+        <p>L’approche historique, toujours utilisée aujourd’hui.</p>
+      </div>
+      <div class="symb">
+        <div class="panel rv"><h3>Le principe</h3>
+          <p>Elle représente les connaissances sous forme de symboles, de règles explicites et de logique formelle. Un expert écrit les règles, la machine les applique.</p></div>
+        <div class="panel rv" style="--d:1"><h3>Où elle excelle</h3>
+          <ul class="checks">
+            <li>Systèmes déterministes : même entrée, même résultat</li>
+            <li>Systèmes experts et moteurs de règles</li>
+            <li>IA explicable, contrôlable et prévisible</li>
+          </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apprentissage">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>IA fondée sur l’apprentissage</h2>
+        <span class="band">Machine Learning, l’approche dominante</span>
+      </div>
+      <p class="intro-box rv">IA prédictive et décisionnelle : apprendre pour prédire et décider à partir de données structurées ou non, de l’expérience ou de la physique.</p>
+      <div class="models">
+        <article class="model rv">
+          <h3>Pilotés par les données <small>Apprendre à partir d’exemples</small></h3>
+          <ul class="learn"><li>Apprentissage supervisé</li><li>Apprentissage non supervisé</li></ul>
+          <p class="need">Demande des données en quantité et en qualité.</p>
+          <div><h4>Algorithmes</h4><ul class="chips">
+            <li class="chip"><abbr title="Machines à vecteurs de support">SVM</abbr></li>
+            <li class="chip"><abbr title="Arbres de décision">DT</abbr></li>
+            <li class="chip"><abbr title="Forêts aléatoires">RF</abbr></li>
+            <li class="chip"><abbr title="K plus proches voisins">KNN</abbr></li>
+            <li class="chip">XGBoost</li>
+            <li class="chip nn">Réseaux de neurones : ANN, CNN, RNN, LSTM</li></ul></div>
+        </article>
+        <article class="model rv" style="--d:1">
+          <h3>Pilotés par l’expérience <small>Apprendre en essayant</small></h3>
+          <ul class="learn"><li>Apprentissage par renforcement</li></ul>
+          <ol class="cycle" aria-label="Boucle de renforcement" style="margin:0;padding:0;list-style:none">
+            <li style="--i:0">L’agent agit</li><li style="--i:1">L’environnement réagit</li><li style="--i:2">Nouvel état</li><li style="--i:3">Récompense</li>
+          </ol>
+          <p class="need">Demande une abstraction de l’environnement.</p>
+          <div><h4>Algorithmes</h4><ul class="chips">
+            <li class="chip">Q‑learning</li><li class="chip">Deep Q‑learning</li>
+            <li class="chip"><abbr title="Proximal Policy Optimization">PPO</abbr></li>
+            <li class="chip nn">Réseaux de neurones</li></ul></div>
+        </article>
+        <article class="model rv" style="--d:2">
+          <h3>Guidés par la physique <small>Apprendre avec les équations</small></h3>
+          <ul class="learn"><li><abbr title="Physics-Informed Neural Networks">PINN</abbr></li></ul>
+          <p class="need">Demande les lois de la physique et des données.</p>
+          <div><h4>Algorithmes</h4><ul class="chips"><li class="chip nn">Réseaux de neurones</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="generative" class="alt">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>Créer, puis agir</h2>
+        <p>Deux usages récents de l’apprentissage : générer du contenu, et accomplir un objectif.</p>
+      </div>
+      <div class="duo">
+        <article class="panel rv">
+          <h3>IA générative</h3>
+          <p>Elle apprend la structure des données, souvent non structurées, pour produire de nouveaux contenus réalistes : texte, image, son, vidéo, code. Elle s’appuie sur l’apprentissage auto‑supervisé et les <abbr title="Grands modèles de langage">LLM</abbr>.</p>
+          <ul class="chips"><li class="chip nn">Transformers, GAN…</li></ul>
+        </article>
+        <article class="panel rv" id="agentique" style="--d:1">
+          <h3>IA agentique</h3>
+          <p>Un agent perçoit son environnement, raisonne, planifie, utilise des outils et agit pour atteindre un objectif.</p>
+          <ol class="cycle" aria-label="Cycle de l’agent" style="margin:0;padding:0;list-style:none">
+            <li style="--i:0">Percevoir</li><li style="--i:1">Raisonner</li><li style="--i:2">Planifier</li><li style="--i:3">Agir</li>
+          </ol>
+          <ul class="chips"><li class="chip nn">LLM</li><li class="chip">Outils, <abbr title="Model Context Protocol">MCP</abbr></li><li class="chip"><abbr title="Retrieval-Augmented Generation">RAG</abbr></li><li class="chip">Renforcement</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="fil rv">
+        <div>
+          <h2>Un fil rouge : les réseaux de neurones</h2>
+          <p>On les retrouve dans presque toutes les branches, des données à la physique, de la génération de contenu aux agents.</p>
+          <ul class="chips"><li class="chip">Données</li><li class="chip">Expérience</li><li class="chip">Physique</li><li class="chip">Générative</li><li class="chip">Agentique</li></ul>
+        </div>
+        <svg id="nn" viewBox="0 0 300 180" role="img" aria-label="Schéma d’un réseau de neurones à trois couches"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <details class="rv">
+        <summary>Glossaire des sigles</summary>
+        <dl>
+          <dt>SVM</dt><dd>Sépare des groupes de données par la meilleure frontière possible.</dd>
+          <dt>DT, RF</dt><dd>Arbres de décision, et forêts qui en combinent des centaines.</dd>
+          <dt>KNN</dt><dd>Classe un élément d’après ses voisins les plus proches.</dd>
+          <dt>CNN, RNN, LSTM</dt><dd>Réseaux spécialisés : images, séquences, mémoire à long terme.</dd>
+          <dt>PPO</dt><dd>Méthode de renforcement stable, très utilisée en pratique.</dd>
+          <dt>PINN</dt><dd>Réseau de neurones contraint de respecter des équations physiques.</dd>
+          <dt>RAG</dt><dd>Génération qui s’appuie sur des documents retrouvés en temps réel.</dd>
+        </dl>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Synthèse issue d’un schéma de classification des approches de l’intelligence artificielle.</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
