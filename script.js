@@ -99,4 +99,27 @@
       svg.appendChild(c);
     });
   });
+
+  /* ----- Menu burger (mobile) ----- */
+  var burger = $("burger"), menu = $("menu");
+  if (burger && menu) {
+    var setMenu = function (open) {
+      menu.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    };
+    burger.addEventListener("click", function () {
+      setMenu(burger.getAttribute("aria-expanded") !== "true");
+    });
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest("a")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); burger.focus(); }
+    });
+    document.addEventListener("click", function (e) {
+      if (!menu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+    });
+    window.addEventListener("resize", function () { if (window.innerWidth > 820) setMenu(false); });
+  }
 })();
