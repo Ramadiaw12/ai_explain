@@ -183,5 +183,33 @@ try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribu
 
 <footer><div class="wrap">Synthèse issue d’un schéma de classification des approches de l’intelligence artificielle.</div></footer>
 <script src="script.js"></script>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById("theme"),label=document.getElementById("theme-label");
+  var mq=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;
+  function current(){return root.getAttribute("data-theme")||(mq&&mq.matches?"dark":"light")}
+  function paint(){label.textContent=current()==="dark"?"Mode clair":"Mode sombre"}
+  try{var s=localStorage.getItem("theme");if(s)root.setAttribute("data-theme",s)}catch(e){}
+  paint();
+  btn.addEventListener("click",function(){
+    var next=current()==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("theme",next)}catch(e){}
+    paint();
+  });
+  document.documentElement.classList.add("js");
+  var burger=document.getElementById("burger"),menu=document.getElementById("menu");
+  function setMenu(open){
+    menu.classList.toggle("open",open);
+    burger.setAttribute("aria-expanded",open?"true":"false");
+    burger.setAttribute("aria-label",open?"Fermer le menu":"Ouvrir le menu");
+  }
+  burger.addEventListener("click",function(){setMenu(burger.getAttribute("aria-expanded")!=="true")});
+  menu.addEventListener("click",function(e){if(e.target.tagName==="A")setMenu(false)});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){setMenu(false);burger.focus()}});
+  document.addEventListener("click",function(e){if(!menu.contains(e.target)&&!burger.contains(e.target))setMenu(false)});
+  window.addEventListener("resize",function(){if(window.innerWidth>820)setMenu(false)});
+})();
+</script>
 </body>
 </html>
